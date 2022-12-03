@@ -6,17 +6,18 @@
           <img src="../../../assets/logo.jpg" alt="logo" />
         </div>
         <h1 class="text-center">Login Here !!</h1>
-        <form action="">
+        <!-- {{loginData | json}} -->
+        <form (ngSubmit)="formSubmit()">
           <!-- username -->
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>User Name</mat-label>
-            <input matInput placeholder="Enter Here" />
+            <input matInput [(ngModel)]="loginData.username" name="username"  placeholder="Enter Here" />
             <mat-hint>Enter a valid username</mat-hint>
           </mat-form-field>
           <!-- password -->
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>User Password</mat-label>
-            <input type="password" matInput placeholder="Enter Here" />
+            <input type="password" [(ngModel)]="loginData.password" name="password" matInput placeholder="Enter Here" />
           </mat-form-field>
 
           <div class="container text-center">
