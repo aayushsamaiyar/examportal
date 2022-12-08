@@ -10,7 +10,7 @@
   <span>Exam Portal</span>
   <span class="example-spacer"></span>
   <a
-    *ngIf="!login.isLogin()"
+    *ngIf="!isLogin"
   routerLink ="/login"
     mat-icon-button
     class="example-icon favorite-icon"
@@ -20,7 +20,7 @@
     <mat-icon>login</mat-icon>
 </a>
   <a
-    *ngIf="!login.isLogin()"
+    *ngIf="!isLogin"
    [routerLink] ="'/signup'"
     mat-icon-button
     class="example-icon"
@@ -30,7 +30,7 @@
     <mat-icon>app_registration</mat-icon>
 </a>
 <button
-    *ngIf="login.isLogin()"
+    *ngIf="isLogin && user" 
     mat-icon-button
     class="example-icon"
     style="margin-right:15%"
@@ -42,7 +42,7 @@
 </button>
 <a
     (click)="logout()"
-    *ngIf="login.isLogin()"
+    *ngIf="isLogin"
    [routerLink] ="'/'"
     mat-icon-button
     class="example-icon"

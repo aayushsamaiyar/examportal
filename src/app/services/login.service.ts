@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import baseUrl from './helper';
 
 @Injectable({
@@ -9,6 +10,8 @@ import baseUrl from './helper';
 export class LoginService {
 
   constructor(private http: HttpClient) { }
+
+  public loginStatusSubject = new Subject<boolean>();
 
 // current user fetch
   public getCurrentuser(){

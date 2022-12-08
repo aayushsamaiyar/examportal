@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 
   formSubmit(){
@@ -53,8 +53,10 @@ export class LoginComponent implements OnInit{
 
             if(this.login.getUserRole()=="admin"){
               window.location.href='/admin'
+              this.login.loginStatusSubject.next(true);
             }else if(this.login.getUserRole()=="NORMAL"){
               window.location.href='/user-dashboard'
+              this.login.loginStatusSubject.next(true);
             }else{
               this.login.logout();
             }
